@@ -20,11 +20,11 @@ ALTER TABLE EmployeeProject ADD CONSTRAINT FK_Project_EmployeeProject FOREIGN KE
 
 --DROP TABLE EmployeeProject
 
-DROP TABLE  EmployeeProject;
-DROP TABLE  Project;
-DROP TABLE  Employee;
-DROP TABLE  Department;
-DROP TABLE Laptop;
+--DROP TABLE  EmployeeProject;
+--DROP TABLE  Project;
+--DROP TABLE  Employee;
+--DROP TABLE  Department;
+--DROP TABLE Laptop;
 
 INSERT INTO Department Values('GTD');
 INSERT INTO Department Values('DT');
@@ -77,7 +77,28 @@ UPDATE Laptop SET BrandName = 'Dell' WHERE Id = 105
 
 Select e.FirstName, e.LastName, e.Email, e.DepartmentId, d.DepartmentName, l.BrandName as LaptopBrand from Employee e ,Department d,Laptop l where e.DepartmentId = d.Id AND l.EmployeeId = e.Id
 
+
+--3rd
+SELECT Id, BrandName FROM Laptop;
+SELECT Laptop.Id AS LaptopId, BrandName, (FirstName+ ' ' +LastName) AS Ownername FROM Laptop, Employee WHERE Laptop.EmployeeId = Employee.Id
+
+--4th
 SELECT e.FirstName, e.LastName, e.Email, e.DepartmentId, d.DepartmentName, l.BrandName as LaptopBrand 
 FROM Employee e 
 JOIN Department d ON e.DepartmentId = d.Id
 JOIN Laptop l ON l.EmployeeId = e.Id
+WHERE e.Id = 1
+
+--5th
+SELECT d.Id, d.DepartmentName,  (FirstName+ ' ' +LastName) AS Employeename, l.Id AS LaptopId, BrandName 
+FROM Department d
+JOIN Employee e ON e.DepartmentId = d.Id
+JOIN Laptop l ON l.EmployeeId = e.Id
+WHERE d.Id = 1
+
+--6th
+SELECT l.Id, l.BrandName,  (FirstName+ ' ' +LastName) AS Employeename, d.Id, d.DepartmentName 
+FROM Laptop l
+JOIN Employee e ON e.Id = l.EmployeeId
+JOIN Department d ON d.Id = e.Id
+WHERE l.Id = 102

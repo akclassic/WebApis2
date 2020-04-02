@@ -10,37 +10,38 @@ using System.Web.Http;
 
 namespace CompanyApis.Controllers
 {
-    public class DepartmentController : ApiController
+    public class LaptopController : ApiController
     {
         CompanyDbOperations companyDbOperations;
 
-        DepartmentController()
+        LaptopController()
         {
             companyDbOperations = new CompanyDbOperations();
         }
-        // GET: api/Department
-        public async Task<List<DepartmentListModel>> Get()
+
+        // GET: api/Laptop
+        public async Task<IEnumerable<LaptopListModel>> Get()
         {
-            return await companyDbOperations.GetDepartmentList();
+            return await companyDbOperations.GetLaptopList();
         }
 
-        // GET: api/Department/5
-        public async Task<SingleDepartmentModel> Get(int id)
+        // GET: api/Laptop/5
+        public async Task<SingleLaptopDetail> Get(int id)
         {
-            return await companyDbOperations.GetSingleDepartment(id);
+            return await companyDbOperations.GetSingleLaptop(id);
         }
 
-        // POST: api/Department
+        // POST: api/Laptop
         public void Post([FromBody]string value)
         {
         }
 
-        // PUT: api/Department/5
+        // PUT: api/Laptop/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE: api/Department/5
+        // DELETE: api/Laptop/5
         public void Delete(int id)
         {
         }

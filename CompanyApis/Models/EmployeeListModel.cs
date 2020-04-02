@@ -5,7 +5,7 @@ using System.Web;
 
 namespace CompanyApis.Models
 {
-    public class EmployeeDetailModel
+    public class EmployeeListModel
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

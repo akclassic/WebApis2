@@ -166,6 +166,7 @@
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LaptopController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DbOperations\CompanyDbOperations.cs" />
     <Compile Include="Global.asax.cs">
@@ -189,21 +190,25 @@
     <Compile Include="Models\Department.cs">
       <DependentUpon>CompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DepartmentModel.cs" />
+    <Compile Include="Models\DepartmentListModel.cs" />
     <Compile Include="Models\Employee.cs">
       <DependentUpon>CompanyModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EmployeeDetailModel.cs" />
+    <Compile Include="Models\EmployeeListModel.cs" />
     <Compile Include="Models\EmployeeProject.cs">
       <DependentUpon>CompanyModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Laptop.cs">
       <DependentUpon>CompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LaptopListModel.cs" />
     <Compile Include="Models\PagingParameterModel.cs" />
     <Compile Include="Models\Project.cs">
       <DependentUpon>CompanyModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SingleDepartmentModel.cs" />
+    <Compile Include="Models\SingleEmployeeModel.cs" />
+    <Compile Include="Models\SingleLaptopDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

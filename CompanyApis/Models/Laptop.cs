@@ -16,6 +16,7 @@ namespace CompanyApis.Models
     {
         public int Id { get; set; }
         public Nullable<int> EmployeeId { get; set; }
+        public string BrandName { get; set; }
     
         public virtual Employee Employee { get; set; }
     }

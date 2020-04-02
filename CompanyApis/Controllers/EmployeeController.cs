@@ -20,14 +20,8 @@ namespace CompanyApis.Controllers
         {
             companyDbOperations = new CompanyDbOperations();
         }
-
-        //public async Task<List<EmployeeDetailModel>> Get()
-        //{
-        //    var employees =  await companyDbOperations.GetAllEmployees();
-        //    return employees;
-        //}
         //GET: api/Company
-        public async Task<IEnumerable<EmployeeDetailModel>> GetEmployees([FromUri]PagingParameterModel pagingParameterModel)
+        public async Task<IEnumerable<EmployeeListModel>> GetEmployees([FromUri]PagingParameterModel pagingParameterModel)
         {
             var employees = await companyDbOperations.GetEmployeesList();
             // Get's No of Rows Count   
@@ -72,9 +66,10 @@ namespace CompanyApis.Controllers
         }
 
         // GET: api/Company/5
-        public string Get(int id)
+        public async Task<SingleEmployeeModel> Get(int id)
         {
-            return "value";
+            var employee = await companyDbOperations.GetSingleEmployee(id);
+            return employee;
         }
 
         // POST: api/Company
